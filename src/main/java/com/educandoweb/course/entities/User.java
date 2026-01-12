@@ -1,9 +1,17 @@
 package com.educandoweb.course.entities;
 
+import jakarta.persistence.*;
+import org.hibernate.annotations.AnyDiscriminatorImplicitValues;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
+@Table(name = "tb_user")
 public class User implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer ID;
     private String name;
     private String email;
