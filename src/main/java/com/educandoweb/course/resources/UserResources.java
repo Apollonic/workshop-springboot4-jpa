@@ -13,7 +13,7 @@ public class UserResources {
     //a anotação @ serve para mapear que esse metodo é a corresponder ao get
     @GetMapping
     public ResponseEntity<User> findAll(){
-        User u = new User(1,"maria","Maroaemail","phone","23q94");
+        User u = new User(null,"maria","Maroaemail","phone","23q94");
         return ResponseEntity.ok().body(u);
     }
 }
