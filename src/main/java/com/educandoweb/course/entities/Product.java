@@ -1,5 +1,6 @@
 package com.educandoweb.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -23,7 +24,9 @@ public class Product implements Serializable {
     //o set indica que uma categoria n pode se repetir duas vezes em um produto, EX: papel / -papelaria, -material, *-papelaria*, ele
     //impede esse segundo papelaria ;)
 
-    @Transient
+    @ManyToMany
+    @JoinTable(name = "td_product_categories", joinColumns = @JoinColumn(name = "product_id"),inverseJoinColumns = @JoinColumn(name = "category_id"))
+    @JsonIgnore
     private Set<Category> categories = new HashSet<>();
 
     public Product() {
