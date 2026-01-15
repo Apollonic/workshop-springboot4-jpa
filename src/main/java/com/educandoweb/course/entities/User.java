@@ -1,7 +1,6 @@
 package com.educandoweb.course.entities;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.AnyDiscriminatorImplicitValues;
 
 import java.io.Serializable;
 import java.util.Objects;
