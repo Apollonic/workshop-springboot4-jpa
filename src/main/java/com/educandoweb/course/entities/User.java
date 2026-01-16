@@ -14,7 +14,7 @@ public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ID;
+    private Long Id;
     private String name;
     private String email;
     private String phone;
@@ -28,7 +28,7 @@ public class User implements Serializable {
     }
 
     public User(Long ID, String name, String email, String phone, String password) {
-        this.ID = ID;
+        this.Id = ID;
         this.name = name;
         this.email = email;
         this.phone = phone;
@@ -36,11 +36,11 @@ public class User implements Serializable {
     }
 
     public Long getID() {
-        return ID;
+        return Id;
     }
 
     public void setID(Long ID) {
-        this.ID = ID;
+        this.Id = ID;
     }
 
     public String getName() {
@@ -83,11 +83,11 @@ public class User implements Serializable {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(ID, user.ID);
+        return Objects.equals(Id, user.Id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(ID);
+        return Objects.hashCode(Id);
     }
 }
