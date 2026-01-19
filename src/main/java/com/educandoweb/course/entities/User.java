@@ -27,8 +27,8 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(Long ID, String name, String email, String phone, String password) {
-        this.Id = ID;
+    public User(Long Id, String name, String email, String phone, String password) {
+        this.Id = Id;
         this.name = name;
         this.email = email;
         this.phone = phone;
@@ -40,7 +40,7 @@ public class User implements Serializable {
     }
 
     public void setID(Long ID) {
-        this.Id = ID;
+        this.Id = Id;
     }
 
     public String getName() {
