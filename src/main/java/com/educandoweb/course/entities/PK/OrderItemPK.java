@@ -1,6 +1,7 @@
 package com.educandoweb.course.entities.PK;
 
 import com.educandoweb.course.entities.Order;
+import com.educandoweb.course.entities.OrderItem;
 import com.educandoweb.course.entities.Product;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Embeddable;
@@ -8,7 +9,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 //essa classe serve como uma chave primária composta, por isso o @Embeddable
 @Embeddable
@@ -37,6 +40,7 @@ public class OrderItemPK implements Serializable {
     public void setProduct(Product product) {
         this.product = product;
     }
+
 
     @Override
     public boolean equals(Object o) {
