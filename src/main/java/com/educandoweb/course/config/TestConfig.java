@@ -37,7 +37,7 @@ public class TestConfig implements CommandLineRunner {
         Category cat2 = new Category(null, "Books");
         Category cat3 = new Category(null, "Computers");
 
-        Product p1 = new Product(null, "The Lord of the Rings", "Lorem ipsum dolor sit amet, consectetur.", 90.5, "");
+        Product p1 = new Product(null, "Pegasus", "Lorem ipsum dolor sit amet, consectetur.", 90.5, "");
         Product p2 = new Product(null, "Smart TV", "Nulla eu imperdiet purus. Maecenas ante.", 2190.0, "");
         Product p3 = new Product(null, "Macbook Pro", "Nam eleifend maximus tortor, at mollis.", 1250.0, "");
         Product p4 = new Product(null, "PC Gamer", "Donec aliquet odio ac rhoncus cursus.", 1200.0, "");
@@ -73,7 +73,10 @@ public class TestConfig implements CommandLineRunner {
 
         orderItemRepository.saveAll(Arrays.asList(oi1,oi2,oi3,oi4));
 
+        Payment pay1 = new Payment(null, Instant.parse("2019-06-20T21:53:07Z"),o1);
+        o1.setPayment(pay1);
 
+        orderRepository.save(o1);
     }
 
 
